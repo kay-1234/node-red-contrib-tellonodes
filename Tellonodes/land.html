@@ -1,0 +1,29 @@
+<script type="text/javascript">
+    RED.nodes.registerType('land',{
+        category: 'Tello',
+        color: '#FFAAAA',
+        defaults: {
+	    name:{value:""},
+            time: {value:"10"}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "land.png",
+        label: function() {
+            return this.name||"land";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="land">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i></label>
+	 <p>Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="node-input-name" placeholder="Enter the node name if you want to change "></p>
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="land">
+    <p>This function lands Tello</p>
+
+</script>
+

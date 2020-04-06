@@ -1,0 +1,30 @@
+<script type="text/javascript">
+    RED.nodes.registerType('stop',{
+        category: 'Tello',
+        color: '#FFFFFF',
+        defaults: {
+	    name:{value:""},
+            time: {value:"10"}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "stop.png",
+        label: function() {
+            return this.name||"stop";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="stop">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i></label>
+	 <p>Time(sec)&nbsp;<input type="number" id="node-input-time" placeholder="Enter the number of seconds you want Tello to stop"></p>
+	 <p>Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="node-input-name" placeholder="Enter the node name if you want to change "></p>
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="stop">
+    <p>This function makes Tello stop.</p>
+    <p>Please enter the number of the seconds you want Tello to stop.</p>
+</script>
+

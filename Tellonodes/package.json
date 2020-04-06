@@ -1,0 +1,38 @@
+{
+  "name": "node-red-contrib-tellonodes",
+  "version": "1.0.0",
+  "description": "TelloNodes",
+  "main": "node.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "node-red": {
+    "nodes": {
+      "lower-case": "node.js",
+      "takeoff": "takeoff.js",
+      "land": "land.js",
+      "up": "up.js",
+      "down": "down.js",
+      "right": "right.js",
+      "left": "left.js",
+      "forward": "forward.js",
+      "back": "back.js",
+      "turnRight": "turnRight.js",
+      "turnLeft": "turnLeft.js",
+      "stop":"stop.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kay-1234/node-red-contrib-tellonodes.git"
+  },
+  "keywords": [
+    "node-red"
+  ],
+  "author": "kay",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/kay-1234/node-red-contrib-tellonodes/issues"
+  },
+  "homepage": "https://github.com/kay-1234/node-red-contrib-tellonodes#readme"
+}

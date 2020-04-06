@@ -1,0 +1,30 @@
+<script type="text/javascript">
+    RED.nodes.registerType('up',{
+        category: 'Tello',
+        color: '#3FADB5',
+        defaults: {
+	    name:{value:""},
+            time: {value:"10"}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "up.png",
+        label: function() {
+            return this.name||"up";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="up">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i></label>
+	 <p>Time(sec)&nbsp;<input type="number" id="node-input-time" placeholder="Enter the number of seconds you want Tello to rise"></p>
+	 <p>Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="node-input-name" placeholder="Enter the node name if you want to change "></p>
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="up">
+    <p>This function rises Tello.</p>
+    <p>Please enter the number of the seconds you want Tello to rise.</p>
+</script>
+

@@ -1,0 +1,30 @@
+<script type="text/javascript">
+    RED.nodes.registerType('turnLeft',{
+        category: 'Tello',
+        color: '#FFCC66',
+        defaults: {
+	    name:{value:""},
+            time: {value:"10"}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "TL.png",
+        label: function() {
+            return this.name||"turnLeft";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="turnLeft">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i></label>
+	 <p>Time(sec)&nbsp;<input type="number" id="node-input-time" placeholder="Enter the number of seconds you want Tello to turn left"></p>
+	 <p>Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="node-input-name" placeholder="Enter the node name if you want to change "></p>
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="turnLeft">
+    <p>This function makes Tello turn left.</p>
+    <p>Please enter the number of the seconds  you want Tello to turn left.</p>
+</script>
+
