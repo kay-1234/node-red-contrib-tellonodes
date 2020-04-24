@@ -8,7 +8,7 @@
   },
   "node-red": {
     "nodes": {
-      "lower-case": "node.js",
+      "output": "output.js",
       "takeoff": "takeoff.js",
       "land": "land.js",
       "up": "up.js",

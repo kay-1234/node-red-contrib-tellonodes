@@ -5,15 +5,15 @@ module.exports = function(RED) {
 	this.time = config.time;
         var node = this;
         node.on('input', function(msg) {
-	    var sec = 0;
+/*	    var sec = 0;
 	    if(node.time==""){
 		sec = 10;
 		}else{
 		sec = node.time;		
-		}
+		}*/
 	    var hoge = msg.payload.programnumber;
 	    var tt ="command"+hoge;
-	    var temp ={"time":sec,"act":"takeoff"};
+	    var temp ={"time":"10","act":"takeoff","actNum":"0"};
 	    msg[tt] = temp;
 
 	    msg.payload.programnumber += 1;

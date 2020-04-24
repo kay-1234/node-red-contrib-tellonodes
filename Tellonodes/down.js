@@ -13,7 +13,7 @@ module.exports = function(RED) {
 		}
 	    var hoge = msg.payload.programnumber;
 	    var tt ="command"+hoge;
-	    var temp ={"time":sec,"act":"down"};
+	    var temp ={"time":sec,"act":"down","actNum":"3"};
 	    msg[tt] = temp;
 
 	    msg.payload.programnumber += 1;

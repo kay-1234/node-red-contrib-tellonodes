@@ -1,0 +1,32 @@
+<script type="text/javascript">
+    RED.nodes.registerType('output',{
+        category: 'Tello',
+	 color: '#C0C0C0',
+	defaults: {
+	    name:{value:"Tello"},
+            
+        },
+        inputs:1,
+        outputs:0,
+        icon: "inject.png",
+        label: function() {
+            return this.name||"output";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="output">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i></label>
+	 <p>Destination&nbsp;<select name=destination id="node-input-name">
+	    <option value="Simulator">Simulator</option>
+	    <option value="Tello">Tello</option>
+	</p>
+
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="output">
+    <p>Select destination</p>
+</script>
+
