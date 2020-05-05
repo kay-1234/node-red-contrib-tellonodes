@@ -8,6 +8,8 @@
   },
   "node-red": {
     "nodes": {
+      "storageNode":"storageNode.js",
+      "VirtualNode":"VirtualNode.js",
       "output": "output.js",
       "takeoff": "takeoff.js",
       "land": "land.js",
@@ -20,6 +22,7 @@
       "turnRight": "turnRight.js",
       "turnLeft": "turnLeft.js",
       "stop":"stop.js"
+
     }
   },
   "repository": {

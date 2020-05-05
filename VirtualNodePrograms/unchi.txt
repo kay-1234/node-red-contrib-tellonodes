@@ -1,0 +1,4 @@
+10 up 2
+10 land 1
+10 up 2
+10 land 1 fin

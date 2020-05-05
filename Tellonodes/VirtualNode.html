@@ -1,0 +1,32 @@
+<script type="text/javascript">
+    RED.nodes.registerType('VirtualNode',{
+        category: 'Tello',
+	 color: '#C0C0C0',
+	defaults: {
+	    name:{value:"Default"},
+            
+        },
+        inputs:1,
+        outputs:1,
+        icon: "VN.png",
+        label: function() {
+            return this.name||"VirtualNode";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="VirtualNode">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i></label>
+	 <p>ProgramName&nbsp;<input  type="text" id="node-input-name" placeholder=
+	"Enter The Program Name ">
+
+	</p>
+
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="VirtualNode">
+    <p>This Node Is Able To Reuse The Program.</p>
+</script>
+

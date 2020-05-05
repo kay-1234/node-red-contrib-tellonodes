@@ -1,66 +1,67 @@
 var fs = require("fs");
-var filePath = __dirname+"/../programs/";
+var filePath = __dirname+"/../VirtualNodePrograms/";
 var logPath =__dirname+"/../logs/";
 var programNum = 0;
 var actionTime = 0;
 var action;
-var actNum
-var vel = 30;
-const command = ["{cmd: 'takeoff'}",
-		"{cmd: 'land'}",
-		"{cmd: 'rc 0 0 "+vel+" 0'}",
-		"{cmd: 'rc 0 0 -"+vel+" 0'}",
-		"{cmd: 'rc "+vel+" 0 0 0'}",
-		"{cmd: 'rc -"+vel+" 0 0 0'}",
-		"{cmd: 'rc 0 "+vel+" 0 0'}",
-		"{cmd: 'rc 0 -"+vel+" 0 0'}",
-		"{cmd: 'rc 0 0 0 100'}",
-		"{cmd: 'rc 0 0 0 -100'}",
-		"{cmd: 'rc 0 0 0 0'}"
-		]
-const rosCom ="ros2 service call /tello_action tello_msgs/TelloAction ";
+var actNum;
+var nodeName;
+var num =0;
 
 module.exports = function(RED) {
-    function OutPutNode(config) {
+    function StorageNode(config) {
         RED.nodes.createNode(this,config);
 	this.name = config.name;
         var node = this;
 	var counter = 0;
         node.on('input', function(msg) {
+		num=0;
 		var date = new Date();
-		var fileName = filePath+date+".sh";
+		nodeName=node.name;
+		var fileName = filePath+nodeName+".txt";
 		var logName=logPath+date+".txt"
-		console.log(node.name);
+
+		console.log(nodeName);
 		console.log(msg);
 		//console.log(fileName);
 		programNum = msg.payload.programnumber;
-		num =0;
-		appendFile(logName,"Output To "+node.name+"\n"+date+"\n");
+		appendFile(logName,"Make Virtual Node(Time,Act,ActNum)\nName:"+nodeName+"\n"+date+"\n")
+		writeFile(fileName,"");
 		for(var item in msg){
 			if(num >2){
 			 	actNum=msg[item].actNum;
 				action = msg[item].act;
 				actionTime = msg[item].time;
-				appendFile(fileName,rosCom+'"'+command[actNum]+'"');
+				var sent = actionTime+' '+action+' '+actNum;
+				if(num==programNum+2){sent+=" fin"};
+				appendFile(fileName,sent);
 				//console.log("num"+actNum);
-				
-	
-				appendFile(fileName,"sleep "+actionTime);
+
 				appendFile(logName,action+":"+actionTime+"s");
-				
+
 			}
 		num++;		
 		}	
 
         });
     }
-    RED.nodes.registerType("output",OutPutNode);
+    RED.nodes.registerType("StorageNode",StorageNode);
 }
 
 
 function appendFile(path,data){
 	data +="\n";
 	fs.appendFile(path,data,function(err){
+	if(err){
+	throw err;	
+		}	
+	});
+}
+
+
+
+function writeFile(path,data){
+	fs.writeFile(path,data,function(err){
 	if(err){
 	throw err;	
 		}	
