@@ -8,6 +8,7 @@
   },
   "node-red": {
     "nodes": {
+      "run": "run.js",
       "storageNode":"storageNode.js",
       "VirtualNode":"VirtualNode.js",
       "output": "output.js",
