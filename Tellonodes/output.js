@@ -58,7 +58,7 @@ module.exports = function(RED) {
 		programNum = msg.payload.programnumber;
 		num =0;
 		appendFile(logName,"Output To "+outputP+"\n"+date+"\n");
-		writeFile(executeFile,"");
+		writeFile(executeFile,"#!/bin/bash\ns");
 		for(var item in msg){
 			if(num >2){
 			 	actNum=msg[item].actNum;
