@@ -1,5 +1,0 @@
-Output To Tello
-Tue May 26 2020 21:47:14 GMT-0700 (PDT)
-
-takeoff:10s
-land:10s
